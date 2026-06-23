@@ -36,6 +36,11 @@ public class DetallePedido extends Base{
             throw new IllegalArgumentException("Producto no puede ser nulo.");
         }
         this.producto = producto;
+
+        if(this.producto != null){
+            double subtotalActualizado = calcularSubtotal();
+            setSubtotal(subtotalActualizado);
+        }
     }
     
     public double calcularSubtotal(){
