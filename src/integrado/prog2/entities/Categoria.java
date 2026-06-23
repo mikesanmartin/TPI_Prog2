@@ -1,6 +1,5 @@
 package entities;
 
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,8 +8,8 @@ public class Categoria extends Base{
     private String descripcion;
     private List<Producto> productos;
     
-    public Categoria(Long id, boolean eliminado, LocalDateTime createdAt,String nombre, String descripcion){
-        super(id,eliminado,createdAt);
+    public Categoria(Long id,String nombre, String descripcion){
+        super(id);
         setNombre(nombre);
         setDescripcion(descripcion);
         this.productos = new ArrayList<>();
