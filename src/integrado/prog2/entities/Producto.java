@@ -1,7 +1,5 @@
 package entities;
 
-import java.time.LocalDateTime;
-
 public class Producto extends Base {
     private String nombre;
     private double precio;
@@ -11,8 +9,8 @@ public class Producto extends Base {
     private boolean disponible;
     private Categoria categoria;
     
-    public Producto(Long id, boolean eliminado, LocalDateTime createdAt, String nombre, double precio, String descripcion, int stock, String imagen, boolean disponible, Categoria categoria){
-        super(id,eliminado,createdAt);
+    public Producto(Long id, String nombre, double precio, String descripcion, int stock, String imagen, boolean disponible, Categoria categoria){
+        super(id);
         setNombre(nombre);
         setPrecio(precio);
         setDescripcion(descripcion);

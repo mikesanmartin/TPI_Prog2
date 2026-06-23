@@ -1,14 +1,12 @@
 package entities;
 
-import java.time.LocalDateTime;
-
 public class DetallePedido extends Base{
     private int cantidad;
     private double subtotal;
     private Producto producto;
     
-    public DetallePedido(Long id, boolean eliminado, LocalDateTime createdAt, int cantidad, double subtotal, Producto producto){
-        super(id,eliminado,createdAt);
+    public DetallePedido(Long id, int cantidad, double subtotal, Producto producto){
+        super(id);
         setCantidad(cantidad);
         setSubtotal(subtotal);
         setProducto(producto);

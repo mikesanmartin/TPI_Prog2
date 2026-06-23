@@ -1,7 +1,6 @@
 package entities;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,8 +17,8 @@ public class Pedido extends Base implements Calculable{
     private List<DetallePedido> detalles;
     private Usuario usuario;
     
-    public Pedido(Long id, boolean eliminado, LocalDateTime createdAt, LocalDate fecha, Estado estado, FormaPago formaPago, Usuario usuario){
-        super(id,eliminado,createdAt);
+    public Pedido(Long id, LocalDate fecha, Estado estado, FormaPago formaPago, Usuario usuario){
+        super(id);
         setFecha(fecha);
         setEstado(estado);
         setFormaPago(formaPago);
@@ -75,10 +74,8 @@ public class Pedido extends Base implements Calculable{
         
         double subtotalDetalle = producto.getPrecio() * cantidad;
         Long nuevoIdDetalle = (long) (this.detalles.size() + 1);
-        boolean eliminadoInicialBase = false;
-        LocalDateTime fechaCreacion = LocalDateTime.now();
-        
-        DetallePedido nuevoDetalle = new DetallePedido(nuevoIdDetalle,eliminadoInicialBase,fechaCreacion,cantidad,subtotalDetalle,producto);
+
+        DetallePedido nuevoDetalle = new DetallePedido(nuevoIdDetalle,cantidad,subtotalDetalle,producto);
         
         this.detalles.add(nuevoDetalle);
         calcularTotal();

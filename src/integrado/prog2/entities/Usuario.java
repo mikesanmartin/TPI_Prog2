@@ -2,7 +2,6 @@ package entities;
 
 import java.util.List;
 import java.util.ArrayList;
-import java.time.LocalDateTime;
 import enums.Rol;
 
 public class Usuario extends Base{
@@ -14,8 +13,8 @@ public class Usuario extends Base{
     private Rol rol;
     private List<Pedido> pedidos;
     
-    public Usuario(Long id, boolean eliminado, LocalDateTime createdAt, String nombre, String apellido, String mail, String celular, String contrasenia, Rol rol){
-        super(id,eliminado,createdAt);
+    public Usuario(Long id, String nombre, String apellido, String mail, String celular, String contrasenia, Rol rol){
+        super(id);
         setNombre(nombre);
         setApellido(apellido);
         setMail(mail);
