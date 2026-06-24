@@ -50,4 +50,13 @@ public abstract class MenuConsola implements Menu{
     }
 
     protected abstract void ejecutarOpcion(int opcionMenu);
+
+    protected Long leerIdValido(){
+        try{
+            return Long.parseLong(scanner.nextLine());
+        } catch (NumberFormatException e){
+            System.out.println("ID Invalido. Intente nuevamente.");
+            return null;
+        }
+    }
 }
