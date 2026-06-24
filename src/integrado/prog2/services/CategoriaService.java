@@ -2,15 +2,12 @@ package services;
 
 import java.util.List;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 import entities.Categoria;
 
 public class CategoriaService {
     private final List<Categoria> categorias;
     private Long ultimoId;
-
-    Scanner scanner = new Scanner(System.in);
 
     public CategoriaService() {
         this.categorias = new ArrayList<>();
