@@ -7,6 +7,16 @@ public abstract class Base {
     private boolean eliminado;
     private LocalDateTime createdAt;
     
+    public Base() {
+        this.eliminado = false;
+        this.createdAt = LocalDateTime.now();
+    }
+
+    public Base(Long id) {
+        this();
+        setId(id);
+    }
+
     public Base(Long id, boolean eliminado, LocalDateTime createdAt){
         setId(id);
         setEliminado(eliminado);
