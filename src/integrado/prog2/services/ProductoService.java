@@ -59,4 +59,13 @@ public class ProductoService {
         }
         return false;
     }
+
+    public Producto buscarProductoPorId(Long id){
+        for(Producto producto:productos){
+            if(producto.getId().equals(id) && !producto.isEliminado()){
+                return producto;
+            }
+        }
+        return null;
+    }
 }
