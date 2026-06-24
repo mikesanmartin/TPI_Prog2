@@ -1,32 +1,35 @@
 package UI;
 
 import java.util.Scanner;
+import enums.AccionMenuPrincipal;
+
+import services.CategoriaService;
 
 public class MenuPrincipal extends MenuConsola  {
-    Scanner scanner = new Scanner(System.in);
 
-    public MenuPrincipal(Scanner scanner) {
-        super("SISTEMA DE GESTION DE PEDIDOS (FOOD STORE)", new String[]{
-            "Categorias",
-            "Productos",
-            "Usuarios",
-            "Pedidos"
-        }, scanner);
+    private final CategoriaService categoriaService;
+
+    public MenuPrincipal(Scanner scanner, CategoriaService categoriaService) {
+        super(
+            "SISTEMA DE GESTION DE PEDIDOS (FOOD STORE)", 
+            MenuUtil.convertirOpciones(AccionMenuPrincipal.values()),
+            scanner);
+            this.categoriaService = categoriaService;
     }
 
     @Override
     protected void ejecutarOpcion(int opcionMenu){
-        switch(opcionMenu){
-            case 1 -> {
-                System.out.println("Selecciono Categorias.");
-            }
-            case 2 -> {
+        AccionMenuPrincipal accion = AccionMenuPrincipal.values()[opcionMenu - 1];
+
+        switch(accion){
+            case CATEGORIAS -> new CategoriaMenu(scanner, categoriaService).mostrarMenu();
+            case PRODUCTOS -> {
                 System.out.println("Selecciono Productos.");
             }
-            case 3 -> {
+            case USUARIOS -> {
                 System.out.println("Selecciono Usuarios.");
             }
-            case 4 -> {
+            case PEDIDOS -> {
                 System.out.println("Selecciono Pedidos.");
             }
         }
