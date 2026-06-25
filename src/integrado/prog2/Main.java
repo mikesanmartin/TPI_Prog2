@@ -11,11 +11,13 @@ public class Main {
 
         CategoriaService categoriaService = new CategoriaService();
         ProductoService productoService = new ProductoService();
+        UsuarioService usuarioService = new UsuarioService();
 
         MenuPrincipal menuPrincipal = new MenuPrincipal(
             scanner,
             categoriaService,
-            productoService
+            productoService,
+            usuarioService
         );
 
         menuPrincipal.mostrarMenu();
