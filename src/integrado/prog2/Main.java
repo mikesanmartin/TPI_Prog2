@@ -4,6 +4,7 @@ import UI.MenuPrincipal;
 import services.CategoriaService;
 import services.ProductoService;
 import services.UsuarioService;
+import services.PedidoService;
 
 public class Main {
     public static void main(String[] args){
@@ -12,12 +13,14 @@ public class Main {
         CategoriaService categoriaService = new CategoriaService();
         ProductoService productoService = new ProductoService();
         UsuarioService usuarioService = new UsuarioService();
+        PedidoService pedidoService = new PedidoService();
 
         MenuPrincipal menuPrincipal = new MenuPrincipal(
             scanner,
             categoriaService,
             productoService,
-            usuarioService
+            usuarioService,
+            pedidoService
         );
 
         menuPrincipal.mostrarMenu();
