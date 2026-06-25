@@ -3,6 +3,7 @@ import java.util.Scanner;
 import UI.MenuPrincipal;
 import services.CategoriaService;
 import services.ProductoService;
+import services.UsuarioService;
 
 public class Main {
     public static void main(String[] args){
