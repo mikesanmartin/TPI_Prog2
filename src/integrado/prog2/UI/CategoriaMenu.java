@@ -121,7 +121,7 @@ public class CategoriaMenu extends MenuConsola{
         Long id = leerIdValido();
         if(id == null) return;
 
-        System.out.print("ESta seguro de que desea eliminar la categoria?.");
+        System.out.print("Esta seguro de que desea eliminar la categoria?.");
         String confirmar = scanner.nextLine().trim();
 
         if(!confirmar.equalsIgnoreCase("S")){
@@ -132,7 +132,7 @@ public class CategoriaMenu extends MenuConsola{
         boolean categoriaEliminada = categoriaService.eliminarCategoria(id);
 
         if(categoriaEliminada){
-            System.out.println("Categoria eliminada existosamente.");
+            System.out.println("Categoria eliminada exitosamente.");
         } else {
             System.out.println("Error: El ID ingresado no existe o ya fue eliminado.");
         }

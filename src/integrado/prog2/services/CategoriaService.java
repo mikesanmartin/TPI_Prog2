@@ -57,4 +57,13 @@ public class CategoriaService {
         }
         return false;
     }
+
+    public Categoria buscarCategoriaPorId(Long id){
+        for(Categoria categoria:categorias){
+            if(categoria.getId().equals(id) && !categoria.isEliminado()){
+                return categoria;
+            }
+        }
+        return null;
+    }
 }
