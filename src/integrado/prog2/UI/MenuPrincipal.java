@@ -34,9 +34,7 @@ public class MenuPrincipal extends MenuConsola  {
             case CATEGORIAS -> new CategoriaMenu(scanner, categoriaService).mostrarMenu();
             case PRODUCTOS -> new ProductoMenu(scanner, productoService,categoriaService).mostrarMenu();
             case USUARIOS -> new UsuarioMenu(scanner,usuarioService).mostrarMenu();
-            case PEDIDOS -> {
-                System.out.println("Selecciono Pedidos.");
-            }
+            case PEDIDOS -> new PedidoMenu(scanner, pedidoService).mostrarMenu();
         }
     }
 }
