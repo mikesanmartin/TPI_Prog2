@@ -4,17 +4,20 @@ import java.util.Scanner;
 import enums.AccionMenuPrincipal;
 
 import services.CategoriaService;
+import services.ProductoService;
 
 public class MenuPrincipal extends MenuConsola  {
 
     private final CategoriaService categoriaService;
+    private final ProductoService productoService;
 
-    public MenuPrincipal(Scanner scanner, CategoriaService categoriaService) {
+    public MenuPrincipal(Scanner scanner, CategoriaService categoriaService, ProductoService productoService) {
         super(
             "SISTEMA DE GESTION DE PEDIDOS (FOOD STORE)", 
             MenuUtil.convertirOpciones(AccionMenuPrincipal.values()),
             scanner);
             this.categoriaService = categoriaService;
+            this.productoService = productoService;
     }
 
     @Override
@@ -23,9 +26,7 @@ public class MenuPrincipal extends MenuConsola  {
 
         switch(accion){
             case CATEGORIAS -> new CategoriaMenu(scanner, categoriaService).mostrarMenu();
-            case PRODUCTOS -> {
-                System.out.println("Selecciono Productos.");
-            }
+            case PRODUCTOS -> new ProductoMenu(scanner, productoService, categoriaService).mostrarMenu();
             case USUARIOS -> {
                 System.out.println("Selecciono Usuarios.");
             }
