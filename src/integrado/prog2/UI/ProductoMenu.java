@@ -1,4 +1,4 @@
-package UI;
+ package UI;
 
 import java.util.Scanner;
 import java.util.List;
@@ -243,7 +243,7 @@ public class ProductoMenu extends MenuConsola{
         Long idProducto = leerIdValido();
         if(idProducto == null) return;
 
-        System.out.println("Esta seguro de que desea eliminar el producto?.");
+        System.out.println("Esta seguro de que desea eliminar el producto?. (S/N)");
         String confirmar = scanner.nextLine().trim();
 
         if (!confirmar.equalsIgnoreCase("S")){
@@ -253,7 +253,7 @@ public class ProductoMenu extends MenuConsola{
 
         boolean productoEliminado = productoService.eliminarProducto(idProducto);
 
-        if(!productoEliminado){
+        if(productoEliminado){
             System.out.println("Producto eliminado existosamente.");
         } else {
             System.out.println("Error: El ID ingresado no existe o ya fue eliminado.");
