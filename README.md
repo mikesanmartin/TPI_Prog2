@@ -18,4 +18,5 @@ Trabajo Práctico Integrador desarrollado en Java para la Tecnicatura Universita
 
 ---
 
-## 🛠️ Particularidades del Proyecto y Decisiones de Diseño
+## DEMO de ejecución
+Link YT: https://youtu.be/Szi8FpMWuA4
